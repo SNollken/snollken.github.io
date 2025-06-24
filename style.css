@@ -1,0 +1,561 @@
+/*
+  snova's adventure - folha de estilos principal
+*/
+
+/* --- 0. definicao de cores (variaveis css) --- */
+:root {
+  /* cores de fundo */
+  --cor-fundo-principal: #0a0a14;
+  --cor-fundo-secundario: #101020;
+  --cor-fundo-terciario: #100018;
+  --cor-fundo-preto: #000000;
+  
+  /* cores de destaque (primaria e secundaria) */
+  --cor-primaria: #00ffff; /* ciano */
+  --cor-secundaria: #ff00ff; /* rosa */
+
+  /* cores de sombra (versoes escuras das cores de destaque) */
+  --cor-primaria-sombra: #008080;
+  --cor-primaria-sombra-escura: #00aaaa;
+  --cor-secundaria-sombra: #aa00aa;
+
+  /* cores de texto */
+  --cor-texto-principal: #e0e0e0;
+  --cor-texto-secundario: #b0b0b0;
+  --cor-texto-cabecalho: #ffffff;
+  --cor-texto-invertido: #0a0a14; /* para usar em botoes com fundo claro */
+}
+
+
+/* --- 1. estilos globais e reset --- */
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Press Start 2P", cursive;
+  color: var(--cor-texto-cabecalho);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px var(--cor-fundo-preto);
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cor-texto-cabecalho);
+  background-color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+
+/* --- 2. layout principal (header e footer) --- */
+
+header {
+  background-color: var(--cor-fundo-preto);
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--cor-primaria);
+}
+
+header h1#logo-title {
+  font-size: 1.5em;
+  color: var(--cor-texto-cabecalho);
+  margin: 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: var(--cor-texto-principal);
+  font-size: 0.8em;
+}
+
+header nav ul li a:hover {
+  color: var(--cor-fundo-preto);
+  background-color: var(--cor-primaria);
+}
+
+main > section:first-of-type {
+  padding-top: 100px;
+}
+
+
+/* --- 3. secao inicio (hero) --- */
+
+#inicio {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-fundo-principal);
+}
+
+.container-inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1000px;
+  width: 90%;
+}
+
+.avatar-container {
+  flex-basis: 35%; 
+  text-align: center;
+}
+
+#avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 0;
+  border: 4px solid var(--cor-primaria);
+  box-shadow: 0 0 0 4px var(--cor-fundo-principal), 0 0 0 8px var(--cor-secundaria);
+  image-rendering: pixelated;
+}
+
+.intro-text-container {
+  flex-basis: 65%;
+}
+
+.intro-text-container h1 {
+  font-size: 2.2em;
+  font-weight: normal;
+  line-height: 1.3;
+  color: var(--cor-texto-cabecalho);
+  text-shadow: 3px 3px var(--cor-secundaria);
+}
+
+.intro-text-container .ola-inicio {
+  font-size: 0.9em;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+  border-left: none; /* garantindo que nao pega outro estilo */
+  padding-left: 0;
+}
+
+.intro-text-container .subtitulo-inicio {
+  font-size: 0.8em;
+  color: var(--cor-texto-secundario);
+  max-width: 600px;
+  line-height: 1.5;
+  border-left: 3px solid var(--cor-secundaria);
+  padding-left: 10px;
+}
+
+
+/* --- 4. secao sobre mim --- */
+
+#sobre-mim {
+    background-color: var(--cor-fundo-terciario);
+    padding: 40px 20px 50px 20px;
+}
+
+#sobre-mim h2 {
+    color: var(--cor-primaria);
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#sobre-mim .container-texto-sobre {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#sobre-mim .container-texto-sobre p {
+    color: var(--cor-texto-principal);
+    font-size: 0.8em;
+    line-height: 1.7;
+    border-left: 3px solid var(--cor-secundaria);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+#sobre-mim .container-texto-sobre p:last-of-type {
+    margin-bottom: 0; 
+}
+
+
+/* --- 5. secao habilidades --- */
+
+#habilidades {
+    padding-bottom: 50px;
+}
+
+#habilidades h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#habilidades .container-habilidades-icones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+a.skill-link:hover {
+    background-color: transparent;
+}
+
+.skill-item {
+    background-color: var(--cor-fundo-secundario);
+    border: 3px solid var(--cor-primaria);
+    box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
+    transition: transform 0.15s linear, box-shadow 0.15s linear;
+    width: 120px;
+    height: 130px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-item:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--cor-primaria-sombra); 
+}
+
+.skill-icon {
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo-principal);
+    border: 2px solid var(--cor-primaria);
+    width: 70px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 1em;
+    line-height: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.skill-item p {
+    color: var(--cor-texto-cabecalho);
+    font-size: 0.7em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* --- 6. secao projetos e cards (estilos compartilhados) --- */
+
+#projetos {
+    background-color: var(--cor-fundo-secundario);
+    padding-bottom: 50px;
+}
+
+#projetos h2 {
+    text-align: center;
+    color: var(--cor-secundaria);
+    font-size: 1.8em;
+    margin-bottom: 40px;
+}
+
+.container-projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.card-projeto {
+    background-color: var(--cor-fundo-principal);
+    border: 3px solid var(--cor-primaria);
+    box-shadow: 5px 5px 0px var(--cor-primaria-sombra-escura);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-icone {
+    color: var(--cor-secundaria);
+    background-color: var(--cor-fundo-secundario);
+    border: 2px solid var(--cor-secundaria);
+    font-size: 2em;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.card-projeto h3 {
+    color: var(--cor-texto-cabecalho);
+    text-shadow: 2px 2px var(--cor-secundaria);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-projeto p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.75em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.learn-more {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-invertido);
+    border: 2px solid var(--cor-texto-invertido);
+    box-shadow: 3px 3px 0px var(--cor-primaria);
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.8em;
+    transition: all 0.2s ease-out;
+}
+
+.learn-more:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-invertido);
+    box-shadow: 3px 3px 0px var(--cor-secundaria);
+    transform: translate(-2px, -2px);
+}
+
+
+/* --- 7. pagina de projetos (filtros) --- */
+
+#lista-projetos h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
+}
+
+.container-tags-filtro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tag-filtro {
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    padding: 8px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-filtro:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-invertido);
+}
+
+.tag-filtro.ativo {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-invertido);
+    box-shadow: 0 0 10px var(--cor-secundaria);
+}
+
+.card-projeto.escondido {
+    display: none;
+}
+
+
+/* --- 8. componente: modal (popup) --- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease;
+}
+
+.modal.visivel {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.modal-fundo {
+    background-color: rgba(10, 10, 20, 0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-conteudo {
+    background-color: var(--cor-fundo-principal);
+    border: 3px solid var(--cor-secundaria);
+    box-shadow: 8px 8px 0px var(--cor-secundaria-sombra);
+    position: relative;
+    padding: 50px 30px 30px 30px; /* topo, dir/esq, baixo */
+    width: 90%;
+    max-width: 650px;
+    text-align: left;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.visivel .modal-conteudo {
+    transform: scale(1);
+}
+
+.fechar-modal {
+    border: 2px solid var(--cor-texto-cabecalho);
+    color: var(--cor-texto-cabecalho);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.fechar-modal:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-invertido);
+    border-color: var(--cor-secundaria);
+}
+
+.modal-imagem {
+    border: 3px solid var(--cor-primaria);
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.modal-titulo {
+    color: var(--cor-secundaria);
+    font-size: 1.5em;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.modal-descricao {
+    color: var(--cor-texto-principal);
+    font-size: 0.8em;
+    line-height: 1.7;
+}
+
+/* --- 9. secao contato --- */
+
+#contato {
+    background-color: var(--cor-fundo-terciario);
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+#contato h2 {
+    color: var(--cor-primaria);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+#contato p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.85em;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-contato-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.link-contato {
+    display: inline-block;
+    background-color: transparent;
+    border: 3px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 12px 25px;
+    font-size: 0.9em;
+    box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
+    transition: all 0.2s ease-out;
+}
+
+.link-contato:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-invertido);
+    box-shadow: 4px 4px 0px var(--cor-secundaria);
+    transform: translate(-2px, -2px);
+}
+
+/* modificador para o botao do whatsapp */
+.link-contato.whatsapp {
+    border-color: #25D366; /* Verde do WhatsApp */
+    color: #25D366;
+    box-shadow: 4px 4px 0px #128C7E; /* Sombra verde escura */
+}
+
+.link-contato.whatsapp:hover {
+    background-color: #25D366;
+    color: var(--cor-texto-cabecalho);
+    box-shadow: 4px 4px 0px var(--cor-secundaria);
+}
