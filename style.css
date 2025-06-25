@@ -1,5 +1,6 @@
 /*
   snova's adventure - folha de estilos principal
+  versao com habilidades expansiveis no hover
 */
 
 /* --- 0. definicao de cores (variaveis css) --- */
@@ -226,7 +227,7 @@ main > section:first-of-type {
     text-align: center;
 }
 
-#habilidades .container-habilidades-icones {
+.container-habilidades-icones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -236,27 +237,24 @@ main > section:first-of-type {
     padding: 0 10px;
 }
 
-a.skill-link:hover {
-    background-color: transparent;
-}
-
 .skill-item {
     background-color: var(--cor-fundo-secundario);
     border: 3px solid var(--cor-primaria);
     box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
-    transition: transform 0.15s linear, box-shadow 0.15s linear;
-    width: 120px;
-    height: 130px;
+    width: 250px; /* largura aumentada para caber o conteudo */
+    min-height: 130px; /* altura minima */
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    transition: all 0.4s ease-out; /* transicao geral suave */
 }
 
-.skill-item:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 7px 7px 0px var(--cor-primaria-sombra); 
+.skill-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .skill-icon {
@@ -275,11 +273,53 @@ a.skill-link:hover {
     text-align: center;
 }
 
-.skill-item p {
+.skill-header p {
     color: var(--cor-texto-cabecalho);
     font-size: 0.7em;
     line-height: 1.2;
     text-align: center;
+}
+
+.skill-details {
+    opacity: 0; /* comeca escondido */
+    max-height: 0; /* comeca com altura zero */
+    overflow: hidden; /* esconde o conteudo que vaza */
+    transition: opacity 0.4s ease-out, max-height 0.4s ease-out, padding 0.4s ease-out;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.skill-item:hover .skill-details {
+    opacity: 1; /* mostra no hover */
+    max-height: 200px; /* altura maxima para o conteudo aparecer */
+    padding-top: 20px; /* espaco entre o header e os detalhes */
+}
+
+.skill-details ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-details li {
+    font-size: 0.7em;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 5px;
+}
+
+.skill-project-link {
+    font-size: 0.7em;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.skill-project-link:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-invertido);
 }
 
 
