@@ -1,30 +1,32 @@
 /*
   snova's adventure - folha de estilos principal
-  versao com habilidades expansiveis no hover
 */
 
 /* --- 0. definicao de cores (variaveis css) --- */
 :root {
+  /* * nova paleta (rosa e verde) */
+
   /* cores de fundo */
-  --cor-fundo-principal: #0a0a14;
-  --cor-fundo-secundario: #101020;
-  --cor-fundo-terciario: #100018;
-  --cor-fundo-preto: #000000;
+  --cor-fundo-principal: #f0e6e0;        /* creme, o tom mais claro para o fundo geral */
+  --cor-fundo-secundario: #ffffff;       /* branco puro para cards ou secoes de destaque */
+  --cor-fundo-terciario: #d9d9d9;        /* cinza claro para detalhes ou divisórias */
+  --cor-fundo-header: #4e5b51;           /* verde escuro para o fundo do header */
   
   /* cores de destaque (primaria e secundaria) */
-  --cor-primaria: #00ffff; /* ciano */
-  --cor-secundaria: #ff00ff; /* rosa */
+  --cor-primaria: #d3a6a1;               /* rosa queimado como cor principal */
+  --cor-secundaria: #a7b5a5;             /* verde sálvia como cor secundaria */
 
   /* cores de sombra (versoes escuras das cores de destaque) */
-  --cor-primaria-sombra: #008080;
-  --cor-primaria-sombra-escura: #00aaaa;
-  --cor-secundaria-sombra: #aa00aa;
+  --cor-primaria-sombra: #b98f8a;
+  --cor-primaria-sombra-escura: #a17a74;
+  --cor-secundaria-sombra: #8a9988;
 
   /* cores de texto */
-  --cor-texto-principal: #e0e0e0;
-  --cor-texto-secundario: #b0b0b0;
-  --cor-texto-cabecalho: #ffffff;
-  --cor-texto-invertido: #0a0a14; /* para usar em botoes com fundo claro */
+  --cor-texto-titulos: #4e5b51;          /* verde escuro para h1, h2, h3 no corpo da página */
+  --cor-texto-principal: #4e5b51;        /* verde escuro para paragrafos e textos comuns */
+  --cor-texto-secundario: #7e8c7c;       /* um tom de verde para texto de apoio */
+  --cor-texto-header: #f0e6e0;           /* cor creme, para contraste no header escuro */
+  --cor-texto-invertido: #ffffff;        /* texto branco para usar sobre botoes coloridos */
 }
 
 
@@ -49,7 +51,7 @@ h1,
 h2,
 h3 {
   font-family: "Press Start 2P", cursive;
-  color: var(--cor-texto-cabecalho);
+  color: var(--cor-texto-titulos);
   margin-bottom: 20px;
   text-shadow: 2px 2px var(--cor-fundo-preto);
 }
@@ -73,7 +75,7 @@ section {
 /* --- 2. layout principal (header e footer) --- */
 
 header {
-  background-color: var(--cor-fundo-preto);
+  background-color: var(--cor-fundo-header);
   padding: 10px 30px;
   position: fixed;
   width: 100%;
@@ -88,7 +90,7 @@ header {
 
 header h1#logo-title {
   font-size: 1.5em;
-  color: var(--cor-texto-cabecalho);
+  color: var(--cor-texto-header);
   margin: 0;
 }
 
@@ -104,7 +106,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: var(--cor-texto-principal);
+  color: var(--cor-texto-header);
   font-size: 0.8em;
 }
 
@@ -235,6 +237,7 @@ main > section:first-of-type {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 10px;
+    align-items: flex-start;
 }
 
 .skill-item {
@@ -487,10 +490,15 @@ main > section:first-of-type {
     padding: 50px 30px 30px 30px; /* topo, dir/esq, baixo */
     width: 90%;
     max-width: 650px;
-    text-align: left;
+    text-align: center;
     transform: scale(0.9);
     transition: transform 0.3s ease;
 }
+
+.modal-titulo,
+.modal-descricao {
+  text-align: left;
+} /* garante que apenas o botao fique centralizado */
 
 .modal.visivel .modal-conteudo {
     transform: scale(1);
@@ -537,6 +545,24 @@ main > section:first-of-type {
     color: var(--cor-texto-principal);
     font-size: 0.8em;
     line-height: 1.7;
+}
+
+.modal-link-site {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-invertido);
+  border: 2px solid var(--cor-texto-invertido);
+  box-shadow: 3px 3px 0px var(--cor-primaria);
+  font-size: 0.8em;
+  text-align: center;
+  transition: all 0.2s ease-out;
+}
+
+.modal-link-site:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px var(--cor-secundaria-sombra);
 }
 
 /* --- 9. secao contato --- */
