@@ -13,6 +13,10 @@
     />
   </head>
   <body>
+      <div id="aviso-construcao" class="aviso-construcao">
+    <p>🚨 A minha jornada ainda está escondida na neblina! Novas funcionalidades e projetos estão sendo adicionados ainda, então você pode encontrar inconsistencias. 🚨</p>
+    <button id="fechar-aviso" class="fechar-aviso">X</button>
+  </div>
     <header>
       <h1 id="logo-title">SNova's Adventure</h1>
       <nav>
@@ -20,7 +24,7 @@
           <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre-mim">Sobre Mim</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -153,20 +157,28 @@
       </section>
 
       <section id="projetos">
-        <h2>Meus Projetos</h2>
+        <h2>Melhores Projetos</h2>
         <div class="container-projetos-grid">
 
           <a href="projetos.html?projeto=primeiro-site" class="card-link">
             <article class="card-projeto">
-              <div class="card-icone">[W]</div>
+              <div class="card-icone">[NI]</div>
               <h3>Meu Primeiro Site</h3>
               <p>
-                Portfolio e contatos para cliente, feito com HTML5, CSS3 e
-                JavaScript puro.
+                Desenvolvimento de um site para a marca Novaes Interiores
               </p>
-              <!-- O botao "Ver Detalhes" aqui e mais visual, o card todo e o link -->
             </article>
           </a>
+
+
+
+          <a href="projetos.html?projeto=todo-list" class="card-link">
+            <article class="card-projeto">
+              <div class="card-icone">[TD]</div>
+              <h3>Lista de Tarefas</h3>
+              <p>Lista de Tarefas conectado com um Banco de Dados (Em progresso)</p>
+              </article>
+              </a>
 
         </div>
       </section>
@@ -193,5 +205,6 @@
       </p>
     </footer>
     <script src="script.js"></script>
+    <script src="aviso.js"></script>
   </body>
 </html>

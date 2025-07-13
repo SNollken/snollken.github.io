@@ -625,3 +625,70 @@ main > section:first-of-type {
     color: var(--cor-texto-cabecalho);
     box-shadow: 4px 4px 0px var(--cor-secundaria);
 }
+
+/* --- 10. componentes extras --- */
+
+.secao-voltar {
+  text-align: center; /* centraliza o botao */
+  padding: 40px 20px; /* adiciona um espaco acima e abaixo */
+  background-color: var(--cor-fundo-terciario); /* mesma cor da secao de contato */
+}
+
+.botao-voltar {
+  display: inline-block;
+  background-color: transparent;
+  border: 3px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  padding: 12px 25px;
+  font-size: 0.9em;
+  box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
+  transition: all 0.2s ease-out;
+}
+
+.botao-voltar:hover {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-invertido);
+  box-shadow: 4px 4px 0px var(--cor-secundaria);
+  transform: translate(-2px, -2px);
+}
+
+/* --- 11. avisos e notificacoes --- */
+
+.aviso-construcao {
+  display: none; /* comeca escondido */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-invertido);
+  text-align: center;
+  padding: 10px 40px 10px 20px;
+  font-size: 0.8em;
+  line-height: 1.4;
+  z-index: 2000; /* garante que fique sobre tudo */
+  border-bottom: 3px solid var(--cor-fundo-header);
+}
+
+.aviso-construcao.visivel {
+  display: block;
+}
+
+.aviso-construcao p {
+  margin: 0;
+  color: var(--cor-texto-invertido);
+  font-size: 0.9em;
+}
+
+.fechar-aviso {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid var(--cor-texto-invertido);
+  color: var(--cor-texto-invertido);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  font-family: 'Press Start 2P', cursive;
+}
