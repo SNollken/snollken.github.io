@@ -1,0 +1,105 @@
+/* --- estilos responsivos (para tablets e telemóveis) --- */
+
+@media (max-width: 768px) {
+
+    /* --- 2. layout principal (header e footer) --- */
+    #menu-hamburguer {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-header);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        border-top: 2px solid var(--cor-primaria);
+    }
+
+    header nav ul.ativo {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        text-align: center;
+        color: var(--cor-texto-header);
+        transition: background-color 0.2s ease-in-out;
+    }
+    
+    header nav ul li a:hover,
+    header nav ul li a:focus {
+        color: var(--cor-fundo-header);
+        background-color: var(--cor-primaria);
+    }
+    
+    /* --- 3. secao inicio (hero) --- */
+    #inicio {
+        padding-top: 120px;
+        min-height: auto;
+    }
+
+    .container-inicio {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .intro-text-container h1 {
+        font-size: 1.8em;
+    }
+
+    .intro-text-container .subtitulo-inicio {
+        border-left: none;
+        padding-left: 0;
+        border-top: 3px solid var(--cor-secundaria);
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    /* --- 5. secao habilidades --- */
+    .container-habilidades-icones {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .skill-item {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* --- 6. secao projetos --- */
+    .container-projetos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* --- 9. secao contato --- */
+    #contato p {
+        font-size: 0.8em;
+    }
+    
+    .container-contato-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .link-contato {
+        width: 90%;
+        max-width: 320px;
+        text-align: center;
+    }
+}

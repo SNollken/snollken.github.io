@@ -1,6 +1,7 @@
 /*
   snova's adventure - folha de estilos principal
 */
+@import url("responsive.css");
 
 /* --- 0. definicao de cores (variaveis css) --- */
 :root {
@@ -94,25 +95,29 @@ header h1#logo-title {
   margin: 0;
 }
 
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+/* --- estilos para os links de navegação --- */
 
+/* ajusta o item da lista para dar espaço entre os botões */
 header nav ul li {
-  display: inline;
-  margin-left: 20px;
+  display: inline-block; /* mantém os links na mesma linha */
+    vertical-align: middle; /* boa prática para alinhar itens na mesma linha */
+    margin: 0 5px; /* adiciona um pequeno espaço entre os links */
 }
 
+/* transforma o link <a> num 'botão' clicável */
 header nav ul li a {
-  color: var(--cor-texto-header);
-  font-size: 0.8em;
+    display: inline-block; /* permite adicionar padding, mas mantém na mesma linha */
+    padding: 10px 15px;    /* espaçamento interno que cria a 'caixa' */
+    border-radius: 4px;      /* opcional: deixa os cantos levemente arredondados */
+    transition: background-color 0.3s ease-in-out; /* transição suave */ 
 }
 
-header nav ul li a:hover {
-  color: var(--cor-fundo-preto);
-  background-color: var(--cor-primaria);
+/* efeito de hover/foco para a versão desktop */
+header nav ul li a:hover,
+header nav ul li a:focus {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-header); /* cor do texto para contraste */
+    text-decoration: none; /* garante que não apareça sublinhado no hover */
 }
 
 main > section:first-of-type {
