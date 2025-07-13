@@ -358,6 +358,13 @@ main > section:first-of-type {
     align-items: center;
     text-align: center;
     padding: 20px;
+    transition: all 0.2s ease-out;
+}
+
+/* Efeito de hover para os cards de projeto */
+.card-link:hover .card-projeto {
+  transform: translate(-4px, -4px);
+  box-shadow: 9px 9px 0px var(--cor-secundaria);
 }
 
 .card-icone {
@@ -374,7 +381,7 @@ main > section:first-of-type {
 }
 
 .card-projeto h3 {
-    color: var(--cor-texto-cabecalho);
+    color: var(--cor-texto-titulos);
     text-shadow: 2px 2px var(--cor-secundaria);
     font-size: 1.2em;
     margin-bottom: 10px;
