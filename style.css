@@ -664,6 +664,27 @@ main > section:first-of-type {
   transform: translate(-2px, -2px);
 }
 
+/* --- estilos para as tags no modal de projeto --- */
+
+.modal-tags-container {
+    display: flex;
+    flex-wrap: wrap; /* permite que as tags quebrem a linha se não couberem */
+    justify-content: center;
+    gap: 8px; /* espaço entre as tags */
+    margin-top: 5px;
+    margin-bottom: 20px; /* espaço entre as tags e a descrição */
+}
+
+.modal-tag {
+    background-color: var(--cor-secundaria); /* verde sálvia */
+    color: var(--cor-texto-invertido);
+    padding: 4px 12px;
+    font-size: 0.7em;
+    border-radius: 4px;
+    text-transform: uppercase; /* para deixar as tags em maiúsculas (ex: JS) */
+    line-height: 1.4;
+}
+
 /* --- 11. avisos e notificacoes --- */
 
 .aviso-construcao {

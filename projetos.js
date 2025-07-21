@@ -82,8 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
         modalImagem.src = imagemSrc;
         modalImagem.alt = "Imagem do projeto " + titulo;
         modalTitulo.textContent = titulo;
-
         modalDescricao.textContent = descricao;
+
+        // 1. pegar a string de tags do atributo data-tags do card
+const tagsString = card.dataset.tags; // ex: "html css js"
+
+// 2. encontrar o nosso novo contentor no modal
+const tagsContainer = modal.querySelector('.modal-tags-container');
+
+// 3. limpar o contentor para garantir que não sobram tags de projetos anteriores
+tagsContainer.innerHTML = ''; 
+
+// 4. verificar se existem tags e depois criá-las
+if (tagsString) {
+    const tagsArray = tagsString.split(' '); // transforma a string num array: ["html", "css", "js"]
+    
+    // para cada tag no array, cria um elemento <span> e adiciona ao contentor
+    tagsArray.forEach(tag => {
+        const tagElemento = `<span class="modal-tag">${tag}</span>`;
+        tagsContainer.innerHTML += tagElemento;
+    });
+}
+// --- fim do novo código para as tags ---
 
 
         //seleciona o botao dentro do modal
