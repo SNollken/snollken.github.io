@@ -7,7 +7,7 @@ Bem-vindo(a) ao repositório do meu portfólio pessoal, uma aventura interativa 
   <!-- <img src="link_para_seu_screenshot.png" alt="Screenshot do Portfólio SNova's Adventure" width="700"/> -->
 </p>
 
-### ✨ [Clique aqui para visitar a aventura!](https://snollken.github.io/portfolio/) 
+### ✨ [Clique aqui para visitar a aventura!](https://snollken.github.io) 
 
 ## 🚀 Sobre o Projeto
 
