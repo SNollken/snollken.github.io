@@ -5,7 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projetos - SNova's Adventure</title>
+  <meta
+    name="description"
+    content="Galeria de projetos de Sofia Novaes com filtros por tecnologia e detalhes de cada projeto."
+  />
+  <meta property="og:title" content="Projetos - SNova's Adventure" />
+  <meta
+    property="og:description"
+    content="Galeria de projetos de Sofia Novaes com filtros por tecnologia e detalhes de cada projeto."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/avatar.png" />
+  <link rel="icon" href="img/avatar.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -15,7 +28,7 @@
   <header>
     <h1 id="logo-title"><a href="index.html">SNova's Adventure</a></h1>
     <nav>
-      <ul>
+      <ul id="menu-principal">
         <li><a href="index.html#inicio">Início</a></li>
         <li><a href="index.html#sobre-mim">Sobre Mim</a></li>
         <li><a href="index.html#habilidades">Habilidades</a></li>
@@ -23,7 +36,15 @@
         <li><a href="index.html#contato">Contato</a></li>
       </ul>
     </nav>
-    <button id="menu-hamburguer" aria-label="Abrir menu">☰</button>
+    <button
+      id="menu-hamburguer"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="menu-principal"
+      aria-expanded="false"
+    >
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
   </header>
 
   <main>
@@ -36,9 +57,11 @@
         <button class="tag-filtro" data-tag="css">CSS</button>
         <button class="tag-filtro" data-tag="js">JavaScript</button>
         <button class="tag-filtro" data-tag="php">PHP</button>
+        <button class="tag-filtro" data-tag="java">Java</button>
         <button class="tag-filtro" data-tag="backend">Backend</button>
         <button class="tag-filtro" data-tag="api">API</button>
         <button class="tag-filtro" data-tag="mysql">MySQL</button>
+        <button class="tag-filtro" data-tag="postgresql">PostgreSQL</button>
       </div>
 
       <div class="container-projetos-grid">
@@ -53,7 +76,7 @@
           <a href="#" class="learn-more">Ver Detalhes</a>
         </article>
 
-        <article id="api-rest-php" class="card-projeto" data-tags="php backend api rest mysql"
+        <article id="api-rest-php" class="card-projeto" data-tags="php backend api mysql"
           data-titulo="API RESTful em PHP"
           data-descricao-longa="API RESTful em PHP com CRUD completo, organização em camadas e boas práticas de backend. Inclui validação de dados e integração com banco de dados MySQL, focando em arquitetura backend e desenvolvimento de APIs." data-link-site="https://github.com/SNollken/API-Restful-PHP">
 
@@ -63,35 +86,62 @@
           <a href="#" class="learn-more">Ver Detalhes</a>
         </article>
 
+        <article id="meu-xamego" class="card-projeto" data-tags="java spring backend api jwt postgresql oauth"
+          data-titulo="Meu Xamêgo — Plataforma de Adoção de Animais"
+          data-descricao-longa="Plataforma de adoção de animais com API RESTful desenvolvida em Java e Spring Boot. Inclui autenticação e autorização com JWT, controle de acesso por perfis (adotante, protetor, ONG, admin), persistência com PostgreSQL, migrações com Flyway, validação de dados, regras de negócio, integração com OAuth (Google) e envio de e-mails para notificações." data-link-site="repositorio-privado.html">
+
+          <div class="card-icone">[JAVA]</div>
+          <h3>Meu Xamêgo</h3>
+          <p>Plataforma de adoção de animais com API REST em Java e Spring Boot</p>
+          <a href="#" class="learn-more">Ver Detalhes</a>
+        </article>
+
       </div>
 
 
     </section>
-  </main>
-
-      <section class="secao-voltar">
+    <section class="secao-voltar">
       <a href="index.html" class="botao-voltar">Voltar ao Início</a>
     </section>
-    
+  </main>
   <footer>
-    <p>
-      &copy; 2025 Sofia Novaes - SNova's Adventure. Todos os direitos
-      reservados.
-    </p>
+    <div class="footer-card">
+      <p class="footer-copy">
+        &copy; 2025 Sofia Novaes - SNova's Adventure. Todos os direitos
+        reservados.
+      </p>
+      <div class="footer-links">
+        <a href="https://wa.me/5561999919717" class="link-contato whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:soso.novaes@gmail.com" class="link-contato" target="_blank" rel="noopener noreferrer">Email</a>
+        <a href="https://www.linkedin.com/in/sofianovaes/" class="link-contato" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/SNollken" class="link-contato" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linktr.ee/sofianovaes" class="link-contato" target="_blank" rel="noopener noreferrer">Outros Links</a>
+      </div>
+    </div>
   </footer>
 
-  <div id="modal-projeto" class="modal">
+  <div
+    id="modal-projeto"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="modal-titulo"
+    aria-describedby="modal-descricao"
+  >
     <div class="modal-fundo"></div>
-    <div class="modal-conteudo">
-      <button class="fechar-modal">X</button>
-      <img src="" alt="Imagem do Projeto" class="modal-imagem">
-      <h3 class="modal-titulo"></h3>
+    <div class="modal-conteudo" tabindex="-1">
+      <button class="fechar-modal" type="button" aria-label="Fechar modal">X</button>
+      <img src="" alt="Imagem do Projeto" class="modal-imagem" />
+      <h3 class="modal-titulo" id="modal-titulo"></h3>
       <div class="modal-tags-container"></div> 
-      <p class="modal-descricao"></p>
-      <a href="#" class="modal-link-site" target="_blank">Acessar Projeto</a>
+      <p class="modal-descricao" id="modal-descricao"></p>
+      <a href="#" class="modal-link-site" target="_blank" rel="noopener noreferrer">Acessar Projeto</a>
     </div>
-    <script src="projetos.js"></script>
-    <script src="menu.js"></script>
+  </div>
+
+  <script src="projetos.js"></script>
+  <script src="menu.js"></script>
 </body>
 
 </html>

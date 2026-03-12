@@ -1,8 +1,6 @@
-/*
+﻿/*
   snova's adventure - folha de estilos principal
 */
-@import url("responsive.css");
-
 /* --- 0. definicao de cores (variaveis css) --- */
 :root {
   /* * nova paleta (rosa e verde) */
@@ -10,12 +8,13 @@
   /* cores de fundo */
   --cor-fundo-principal: #f0e6e0;        /* creme, o tom mais claro para o fundo geral */
   --cor-fundo-secundario: #ffffff;       /* branco puro para cards ou secoes de destaque */
-  --cor-fundo-terciario: #d9d9d9;        /* cinza claro para detalhes ou divisórias */
+  --cor-fundo-terciario: #d9d9d9;        /* cinza claro para detalhes ou divisÃ³rias */
   --cor-fundo-header: #4e5b51;           /* verde escuro para o fundo do header */
+  --cor-fundo-preto: #000000;            /* preto para sombras e contraste */
   
   /* cores de destaque (primaria e secundaria) */
   --cor-primaria: #d3a6a1;               /* rosa queimado como cor principal */
-  --cor-secundaria: #a7b5a5;             /* verde sálvia como cor secundaria */
+  --cor-secundaria: #a7b5a5;             /* verde sÃ¡lvia como cor secundaria */
 
   /* cores de sombra (versoes escuras das cores de destaque) */
   --cor-primaria-sombra: #b98f8a;
@@ -23,17 +22,16 @@
   --cor-secundaria-sombra: #8a9988;
 
   /* cores de texto */
-  --cor-texto-titulos: #4e5b51;          /* verde escuro para h1, h2, h3 no corpo da página */
+  --cor-texto-titulos: #4e5b51;          /* verde escuro para h1, h2, h3 no corpo da pÃ¡gina */
   --cor-texto-principal: #4e5b51;        /* verde escuro para paragrafos e textos comuns */
   --cor-texto-secundario: #7e8c7c;       /* um tom de verde para texto de apoio */
   --cor-texto-header: #f0e6e0;           /* cor creme, para contraste no header escuro */
+  --cor-texto-cabecalho: #4e5b51;        /* alias para manter consistencia com usos existentes */
   --cor-texto-invertido: #ffffff;        /* texto branco para usar sobre botoes coloridos */
 }
 
 
 /* --- 1. estilos globais e reset --- */
-
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   margin: 0;
@@ -68,8 +66,15 @@ a:hover {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
+}
+
 section {
   padding: 40px 20px;
+  scroll-margin-top: 110px;
 }
 
 
@@ -95,33 +100,104 @@ header h1#logo-title {
   margin: 0;
 }
 
-/* --- estilos para os links de navegação --- */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* ajusta o item da lista para dar espaço entre os botões */
+#menu-hamburguer {
+  background: transparent;
+  border: 0;
+  color: var(--cor-texto-header);
+  padding: 6px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1em;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#menu-hamburguer .menu-icon {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background-color: currentColor;
+  box-shadow: 0 8px 0 currentColor, 0 16px 0 currentColor;
+}
+
+#menu-hamburguer:hover,
+#menu-hamburguer:focus-visible {
+  background-color: transparent;
+  color: var(--cor-primaria);
+}
+
+#menu-hamburguer:focus {
+  outline: none;
+}
+
+#menu-hamburguer:active {
+  transform: translateY(1px);
+}
+/* --- estilos para os links de navegaÃ§Ã£o --- */
+
+/* ajusta o item da lista para dar espaÃ§o entre os botÃµes */
 header nav ul li {
-  display: inline-block; /* mantém os links na mesma linha */
-    vertical-align: middle; /* boa prática para alinhar itens na mesma linha */
-    margin: 0 5px; /* adiciona um pequeno espaço entre os links */
+  display: inline-block; /* mantÃ©m os links na mesma linha */
+    vertical-align: middle; /* boa prÃ¡tica para alinhar itens na mesma linha */
+    margin: 0 5px; /* adiciona um pequeno espaÃ§o entre os links */
 }
 
-/* transforma o link <a> num 'botão' clicável */
+/* transforma o link <a> num 'botÃ£o' clicÃ¡vel */
 header nav ul li a {
-    display: inline-block; /* permite adicionar padding, mas mantém na mesma linha */
-    padding: 10px 15px;    /* espaçamento interno que cria a 'caixa' */
+    display: inline-block; /* permite adicionar padding, mas mantÃ©m na mesma linha */
+    padding: 10px 15px;    /* espaÃ§amento interno que cria a 'caixa' */
     border-radius: 4px;      /* opcional: deixa os cantos levemente arredondados */
-    transition: background-color 0.3s ease-in-out; /* transição suave */ 
+    transition: background-color 0.3s ease-in-out; /* transiÃ§Ã£o suave */ 
 }
 
-/* efeito de hover/foco para a versão desktop */
+/* efeito de hover/foco para a versÃ£o desktop */
 header nav ul li a:hover,
 header nav ul li a:focus {
     background-color: var(--cor-primaria);
     color: var(--cor-fundo-header); /* cor do texto para contraste */
-    text-decoration: none; /* garante que não apareça sublinhado no hover */
+    text-decoration: none; /* garante que nÃ£o apareÃ§a sublinhado no hover */
 }
 
 main > section:first-of-type {
   padding-top: 100px;
+}
+
+footer {
+  padding: 30px 20px 40px;
+  text-align: center;
+  background-color: var(--cor-fundo-principal);
+}
+
+.footer-card {
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: var(--cor-fundo-secundario);
+  border: 3px solid var(--cor-primaria);
+  box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
+  padding: 16px 20px;
+}
+
+.footer-copy {
+  color: var(--cor-texto-principal);
+  font-size: 0.75em;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
 
@@ -668,20 +744,20 @@ main > section:first-of-type {
 
 .modal-tags-container {
     display: flex;
-    flex-wrap: wrap; /* permite que as tags quebrem a linha se não couberem */
+    flex-wrap: wrap; /* permite que as tags quebrem a linha se nÃ£o couberem */
     justify-content: center;
-    gap: 8px; /* espaço entre as tags */
+    gap: 8px; /* espaÃ§o entre as tags */
     margin-top: 5px;
-    margin-bottom: 20px; /* espaço entre as tags e a descrição */
+    margin-bottom: 20px; /* espaÃ§o entre as tags e a descriÃ§Ã£o */
 }
 
 .modal-tag {
-    background-color: var(--cor-secundaria); /* verde sálvia */
+    background-color: var(--cor-secundaria); /* verde sÃ¡lvia */
     color: var(--cor-texto-invertido);
     padding: 4px 12px;
     font-size: 0.7em;
     border-radius: 4px;
-    text-transform: uppercase; /* para deixar as tags em maiúsculas (ex: JS) */
+    text-transform: uppercase; /* para deixar as tags em maiÃºsculas (ex: JS) */
     line-height: 1.4;
 }
 

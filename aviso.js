@@ -5,14 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('header');
   const aviso = document.getElementById('aviso-construcao');
 
-  // verifica se os dois elementos existem na pagina
-  if (header && aviso) {
+  if (!aviso) {
+    return;
+  }
+
+  function atualizarPosicaoAviso() {
+    if (!header) {
+      return;
+    }
+
     // mede a altura total do header (incluindo padding e bordas)
     const headerHeight = header.offsetHeight;
     
     // define a posicao 'top' do banner para ser exatamente a altura do header
     aviso.style.top = headerHeight + 'px';
   }
+
+  atualizarPosicaoAviso();
+  window.addEventListener('resize', atualizarPosicaoAviso);
 
   // seleciona os elementos do aviso
   const botaoFechar = document.getElementById('fechar-aviso');
@@ -25,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // adiciona o evento para o botao de fechar
-  botaoFechar.addEventListener('click', function() {
-    // esconde o aviso
-    aviso.classList.remove('visivel');
-    
-    // salva no navegador que o aviso foi fechado
-    localStorage.setItem('avisoConstrucaoFechado', 'true');
-  });
+  if (botaoFechar) {
+    botaoFechar.addEventListener('click', function() {
+      // esconde o aviso
+      aviso.classList.remove('visivel');
+      
+      // salva no navegador que o aviso foi fechado
+      localStorage.setItem('avisoConstrucaoFechado', 'true');
+    });
+  }
 
 });

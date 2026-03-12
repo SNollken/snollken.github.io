@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SNova's Adventure</title>
+    <meta
+      name="description"
+      content="Portfólio de Sofia Novaes com projetos, habilidades e contato no universo de desenvolvimento."
+    />
+    <meta property="og:title" content="SNova's Adventure" />
+    <meta
+      property="og:description"
+      content="Portfólio de Sofia Novaes com projetos, habilidades e contato no universo de desenvolvimento."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/avatar.png" />
+    <link rel="icon" href="img/avatar.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +33,7 @@
     <header>
       <h1 id="logo-title">SNova's Adventure</h1>
       <nav>
-        <ul>
+        <ul id="menu-principal">
           <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre-mim">Sobre Mim</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
@@ -28,7 +41,15 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <button id="menu-hamburguer" aria-label="Abrir menu">☰</button>
+      <button
+        id="menu-hamburguer"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+      >
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
     </header>
 
     <main>
@@ -137,13 +158,22 @@
     </p>
   </article>
 </a>
-
 <a href="projetos.html?projeto=api-rest-php" class="card-link">
   <article class="card-projeto">
     <div class="card-icone">[PHP]</div>
     <h3>API RESTful em PHP</h3>
     <p>
       API RESTful em PHP com CRUD completo e integração com MySQL
+    </p>
+  </article>
+</a>
+
+<a href="projetos.html?projeto=meu-xamego" class="card-link">
+  <article class="card-projeto">
+    <div class="card-icone">[JAVA]</div>
+    <h3>Meu Xamêgo</h3>
+    <p>
+      Plataforma de adoção de animais com API REST em Java e Spring Boot
     </p>
   </article>
 </a>
@@ -158,11 +188,11 @@
             <p>Vamos nos conectar e discutir sobre minhas próximas missões nessa aventura!</p>
             
             <div class="container-contato-links">
-                <a href="https://wa.me/5561999919717" class="link-contato whatsapp" target="_blank">WhatsApp</a>
-                <a href="mailto:soso.novaes@gmail.com" class="link-contato" target="_blank">Email</a>
-                <a href="https://www.linkedin.com/in/sofianovaes/" class="link-contato" target="_blank">LinkedIn</a>
-                <a href="https://github.com/SNollken" class="link-contato" target="_blank">GitHub</a>
-                <a href="https://linktr.ee/sofianovaes" class="link-contato" target="_blank">Outros Links</a>
+                <a href="https://wa.me/5561999919717" class="link-contato whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="mailto:soso.novaes@gmail.com" class="link-contato" target="_blank" rel="noopener noreferrer">Email</a>
+                <a href="https://www.linkedin.com/in/sofianovaes/" class="link-contato" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/SNollken" class="link-contato" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linktr.ee/sofianovaes" class="link-contato" target="_blank" rel="noopener noreferrer">Outros Links</a>
             </div>
       </section>
 
@@ -174,7 +204,6 @@
         reservados.
       </p>
     </footer>
-    <script src="script.js"></script>
     <script src="aviso.js"></script>
     <script src="menu.js"></script>
   </body>

@@ -61,9 +61,66 @@ document.addEventListener("DOMContentLoaded", function () {
   if (modal) {
     const modalFundo = modal.querySelector(".modal-fundo");
     const botaoFechar = modal.querySelector(".fechar-modal");
+    const modalConteudo = modal.querySelector(".modal-conteudo");
     const modalImagem = modal.querySelector(".modal-imagem");
     const modalTitulo = modal.querySelector(".modal-titulo");
     const modalDescricao = modal.querySelector(".modal-descricao");
+    const tagsContainer = modal.querySelector(".modal-tags-container");
+    const linkBotao = modal.querySelector(".modal-link-site");
+
+    function preencherModal(card) {
+      const imagemSrc = card.dataset.imagem;
+      const titulo = card.dataset.titulo || "";
+      const descricao = card.dataset.descricaoLonga || "";
+      const tagsString = card.dataset.tags;
+      const urlSite = card.dataset.linkSite;
+
+      modalTitulo.textContent = titulo;
+      modalDescricao.textContent = descricao;
+
+      if (imagemSrc) {
+        modalImagem.src = imagemSrc;
+        modalImagem.alt = "Imagem do projeto " + titulo;
+        modalImagem.style.display = "block";
+      } else {
+        modalImagem.removeAttribute("src");
+        modalImagem.alt = "";
+        modalImagem.style.display = "none";
+      }
+
+      if (tagsContainer) {
+        tagsContainer.innerHTML = "";
+        if (tagsString) {
+          const tagsArray = tagsString.split(" ");
+          tagsArray.forEach((tag) => {
+            const tagElemento = document.createElement("span");
+            tagElemento.className = "modal-tag";
+            tagElemento.textContent = tag;
+            tagsContainer.appendChild(tagElemento);
+          });
+        }
+      }
+
+      if (linkBotao) {
+        if (urlSite) {
+          linkBotao.href = urlSite;
+          linkBotao.style.display = "inline-block";
+        } else {
+          linkBotao.style.display = "none";
+          linkBotao.removeAttribute("href");
+        }
+      }
+    }
+
+    function abrirModal(card) {
+      preencherModal(card);
+      modal.classList.add("visivel");
+      modal.setAttribute("aria-hidden", "false");
+
+      if (modalConteudo) {
+        modalConteudo.focus();
+      }
+    }
 
     // funcao para abrir o modal
     botoesVerDetalhes.forEach((botao) => {
@@ -72,69 +129,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // pega o card pai do botao clicado
         const card = botao.closest(".card-projeto");
-
-        // pega os dados do card usando os atributos 'data-*'
-        const imagemSrc = card.dataset.imagem;
-        const titulo = card.dataset.titulo;
-        const descricao = card.dataset.descricaoLonga;
-
-        // preenche o modal com os dados
-        modalImagem.src = imagemSrc;
-        modalImagem.alt = "Imagem do projeto " + titulo;
-        modalTitulo.textContent = titulo;
-        modalDescricao.textContent = descricao;
-
-        // 1. pegar a string de tags do atributo data-tags do card
-const tagsString = card.dataset.tags; // ex: "html css js"
-
-// 2. encontrar o nosso novo contentor no modal
-const tagsContainer = modal.querySelector('.modal-tags-container');
-
-// 3. limpar o contentor para garantir que não sobram tags de projetos anteriores
-tagsContainer.innerHTML = ''; 
-
-// 4. verificar se existem tags e depois criá-las
-if (tagsString) {
-    const tagsArray = tagsString.split(' '); // transforma a string num array: ["html", "css", "js"]
-    
-    // para cada tag no array, cria um elemento <span> e adiciona ao contentor
-    tagsArray.forEach(tag => {
-        const tagElemento = `<span class="modal-tag">${tag}</span>`;
-        tagsContainer.innerHTML += tagElemento;
-    });
-}
-// --- fim do novo código para as tags ---
-
-
-        //seleciona o botao dentro do modal
-        const linkBotao = modal.querySelector(".modal-link-site");
-
-        //pega a url do atributo data-link-site do card
-        const urlSite = card.dataset.linkSite;
-
-        //verifica se a url existe
-        if (urlSite) {
-          //se existir, define o href do botao e o torna visivel
-          linkBotao.href = urlSite;
-          linkBotao.style.display = "inline-block";
-        } else {
-          //se nao existir, esconde o botao
-          linkBotao.style.display = "none";
+        if (card) {
+          abrirModal(card);
         }
-        // mostra o modal
-        modal.classList.add("visivel");
-        
       });
     });
 
     // funcao para fechar o modal
     function fecharModal() {
       modal.classList.remove("visivel");
+      modal.setAttribute("aria-hidden", "true");
     }
 
     // adiciona eventos de clique para fechar
-    botaoFechar.addEventListener("click", fecharModal);
-    modalFundo.addEventListener("click", fecharModal);
+    if (botaoFechar) {
+      botaoFechar.addEventListener("click", fecharModal);
+    }
+    if (modalFundo) {
+      modalFundo.addEventListener("click", fecharModal);
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("visivel")) {
+        fecharModal();
+      }
+    });
   }
   const paramsUrl = new URLSearchParams(window.location.search);
   const projetoId = paramsUrl.get("projeto"); // pega o valor do parametro 'projeto'

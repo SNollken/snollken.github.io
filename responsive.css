@@ -4,7 +4,7 @@
 
     /* --- 2. layout principal (header e footer) --- */
     #menu-hamburguer {
-        display: block;
+        display: flex;
     }
 
     header nav ul {
@@ -50,6 +50,10 @@
         min-height: auto;
     }
 
+    section {
+        scroll-margin-top: 140px;
+    }
+
     .container-inicio {
         flex-direction: column;
         text-align: center;
@@ -80,6 +84,12 @@
         max-width: 300px;
     }
 
+    .skill-details {
+        opacity: 1;
+        max-height: none;
+        padding-top: 15px;
+    }
+
     /* --- 6. secao projetos --- */
     .container-projetos-grid {
         grid-template-columns: 1fr;
@@ -98,6 +108,17 @@
     }
     
     .link-contato {
+        width: 90%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links .link-contato {
         width: 90%;
         max-width: 320px;
         text-align: center;
