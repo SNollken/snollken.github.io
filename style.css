@@ -434,6 +434,16 @@ footer {
     padding: 0 10px;
 }
 
+.card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+}
+
+.card-link .card-projeto {
+    height: 100%;
+}
+
 .card-projeto {
     background-color: var(--cor-fundo-principal);
     border: 3px solid var(--cor-primaria);
