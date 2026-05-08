@@ -235,7 +235,8 @@ footer {
   border-radius: 0;
   border: 4px solid var(--cor-primaria);
   box-shadow: 0 0 0 4px var(--cor-fundo-principal), 0 0 0 8px var(--cor-secundaria);
-  image-rendering: pixelated;
+  object-fit: cover;
+  object-position: center;
 }
 
 .intro-text-container {
