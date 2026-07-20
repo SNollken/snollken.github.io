@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+<title id="t">Biblioteca API</title><desc id="d">Sistema de catálogo de livros integrado a uma API Spring</desc>
+<rect width="1200" height="630" fill="#efe8d8"/><rect x="58" y="48" width="1084" height="534" fill="#fbf7ee" stroke="#355243" stroke-width="4"/>
+<rect x="58" y="48" width="1084" height="82" fill="#355243"/><text x="94" y="100" fill="#fbf7ee" font-family="serif" font-size="38" font-weight="700">Biblioteca Clássica</text>
+<text x="92" y="194" fill="#355243" font-family="serif" font-size="44" font-weight="700">Acervo organizado</text><text x="92" y="237" fill="#7c6c55" font-family="sans-serif" font-size="20">Cadastre, edite e acompanhe seus livros.</text>
+<rect x="92" y="285" width="525" height="215" fill="#fff" stroke="#d2c5ae" stroke-width="3"/><text x="120" y="327" fill="#355243" font-family="monospace" font-size="20" font-weight="700">CATÁLOGO</text>
+<rect x="120" y="352" width="38" height="104" fill="#b75b4b"/><rect x="164" y="337" width="44" height="119" fill="#d3a45f"/><rect x="214" y="366" width="34" height="90" fill="#65816f"/><rect x="254" y="345" width="48" height="111" fill="#806c8d"/><rect x="112" y="456" width="448" height="12" fill="#6b533a"/>
+<rect x="661" y="285" width="389" height="215" fill="#17211c"/><circle cx="697" cy="320" r="7" fill="#b75b4b"/><circle cx="720" cy="320" r="7" fill="#d3a45f"/><circle cx="743" cy="320" r="7" fill="#65816f"/>
+<text x="692" y="371" fill="#85c59f" font-family="monospace" font-size="20">GET /livros</text><text x="692" y="410" fill="#f1ede4" font-family="monospace" font-size="18">200 OK</text><text x="692" y="449" fill="#b7c3bb" font-family="monospace" font-size="17">Spring Boot + PostgreSQL</text>
+<text x="92" y="544" fill="#7c6c55" font-family="monospace" font-size="18">JAVA • SPRING • JDBC • REST API</text></svg>
