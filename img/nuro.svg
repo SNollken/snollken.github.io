@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+<title id="t">Nuro</title><desc id="d">Interface de uma assistente virtual com voz, visão e memória</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#17142b"/><stop offset="1" stop-color="#252044"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/><rect x="62" y="52" width="1076" height="526" rx="18" fill="#100e20" stroke="#a58cff" stroke-width="4"/>
+<text x="105" y="130" fill="#f4efff" font-family="monospace" font-size="42" font-weight="700">NURO</text><text x="105" y="169" fill="#a58cff" font-family="monospace" font-size="19">ASSISTENTE IA • ONLINE</text>
+<circle cx="355" cy="346" r="132" fill="#29234c" stroke="#a58cff" stroke-width="6"/><circle cx="318" cy="330" r="13" fill="#f4efff"/><circle cx="392" cy="330" r="13" fill="#f4efff"/><path d="M315 392q40 30 80 0" fill="none" stroke="#f4efff" stroke-width="8" stroke-linecap="round"/>
+<rect x="550" y="211" width="494" height="94" rx="12" fill="#1d1935" stroke="#51487c" stroke-width="3"/><text x="580" y="247" fill="#a58cff" font-family="monospace" font-size="18">OUVINDO</text>
+<path d="M580 274h20l12-30 18 55 18-70 19 45h20l13-20 17 40 16-20h281" fill="none" stroke="#71e2cf" stroke-width="5"/>
+<rect x="550" y="335" width="236" height="142" rx="10" fill="#1d1935"/><text x="578" y="375" fill="#a58cff" font-family="monospace" font-size="18">VISÃO</text><text x="578" y="424" fill="#f4efff" font-family="monospace" font-size="23">Tela ativa</text>
+<rect x="808" y="335" width="236" height="142" rx="10" fill="#1d1935"/><text x="836" y="375" fill="#a58cff" font-family="monospace" font-size="18">MEMÓRIA</text><text x="836" y="424" fill="#f4efff" font-family="monospace" font-size="23">Contexto salvo</text>
+<text x="105" y="535" fill="#918aaa" font-family="monospace" font-size="18">PYTHON • VOZ • VISÃO • AUTOMAÇÃO</text></svg>
