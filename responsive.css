@@ -128,4 +128,77 @@
         max-width: 320px;
         text-align: center;
     }
+
+  .container-tags-filtro {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    gap: 10px;
+  }
+
+  .tag-filtro {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 8px 12px;
+  }
+
+  header h1#logo-title {
+    font-size: 1.1em;
+  }
+
+  .intro-text-container h1 {
+    font-size: 1.3em;
+  }
+
+  .intro-text-container .ola-inicio {
+    font-size: 0.75em;
+  }
+
+  #habilidades h2,
+  #sobre-mim h2,
+  #projetos h2,
+  #contato h2 {
+    font-size: 1.4em;
+  }
+
+  #lista-projetos h2 {
+    font-size: 1.3em;
+  }
+
+  .skill-item {
+    width: calc(100% - 24px);
+    max-width: none;
+  }
+
+  .skill-details ul,
+  .skill-details li {
+    text-align: left;
+  }
+
+  .aviso-construcao {
+    padding: 8px 44px 8px 12px;
+    font-size: 0.65em;
+  }
+
+  .aviso-construcao p {
+    font-size: 0.95em;
+  }
+
+  .fechar-aviso {
+    width: 32px;
+    height: 32px;
+    right: 6px;
+  }
+
+  .modal-conteudo {
+    width: 94%;
+    padding: 44px 16px 20px 16px;
+  }
 }

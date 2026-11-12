@@ -1,48 +1,40 @@
-// espera o conteudo da pagina carregar
+// controla o aviso de construção e compensa header fixo
 document.addEventListener('DOMContentLoaded', function() {
-  
-     // seleciona o header e o banner
   const header = document.querySelector('header');
   const aviso = document.getElementById('aviso-construcao');
-
-  if (!aviso) {
-    return;
-  }
+  if (!aviso) return;
 
   function atualizarPosicaoAviso() {
-    if (!header) {
+    if (!aviso.classList.contains('visivel')) {
+      document.body.classList.remove('aviso-visivel');
+      document.body.style.removeProperty('--aviso-h');
       return;
     }
+    // banner fixo no topo; header desce para baixo dele
+    aviso.style.top = '0px';
+    const avisoH = aviso.offsetHeight || 0;
+    document.body.style.setProperty('--aviso-h', avisoH + 'px');
+    document.body.classList.add('aviso-visivel');
+    if (header) {
+      header.style.top = avisoH + 'px';
+    }
+  }
 
-    // mede a altura total do header (incluindo padding e bordas)
-    const headerHeight = header.offsetHeight;
-    
-    // define a posicao 'top' do banner para ser exatamente a altura do header
-    aviso.style.top = headerHeight + 'px';
+  if (!localStorage.getItem('avisoConstrucaoFechado')) {
+    aviso.classList.add('visivel');
   }
 
   atualizarPosicaoAviso();
   window.addEventListener('resize', atualizarPosicaoAviso);
 
-  // seleciona os elementos do aviso
   const botaoFechar = document.getElementById('fechar-aviso');
-
-  // verifica se o aviso ja foi fechado antes
-  // o 'localStorage' e um pequeno armazenamento no navegador
-  if (!localStorage.getItem('avisoConstrucaoFechado')) {
-    // se nao foi fechado, mostra o aviso
-    aviso.classList.add('visivel');
-  }
-
-  // adiciona o evento para o botao de fechar
   if (botaoFechar) {
     botaoFechar.addEventListener('click', function() {
-      // esconde o aviso
       aviso.classList.remove('visivel');
-      
-      // salva no navegador que o aviso foi fechado
+      if (header) header.style.top = '0px';
+      document.body.classList.remove('aviso-visivel');
+      document.body.style.removeProperty('--aviso-h');
       localStorage.setItem('avisoConstrucaoFechado', 'true');
     });
   }
-
 });

@@ -91,6 +91,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   border-bottom: 3px solid var(--cor-primaria);
 }
 
@@ -172,6 +173,10 @@ main > section:first-of-type {
   padding-top: 100px;
 }
 
+body.aviso-visivel main > section:first-of-type {
+  padding-top: calc(100px + var(--aviso-h, 0px));
+}
+
 footer {
   padding: 30px 20px 40px;
   text-align: center;
@@ -237,6 +242,7 @@ footer {
   box-shadow: 0 0 0 4px var(--cor-fundo-principal), 0 0 0 8px var(--cor-secundaria);
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .intro-text-container {
@@ -388,7 +394,7 @@ footer {
     list-style: none;
     padding: 0;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: left;
 }
 
 .skill-details li {
@@ -594,6 +600,8 @@ footer {
     padding: 50px 30px 30px 30px; /* topo, dir/esq, baixo */
     width: 90%;
     max-width: 650px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
     text-align: center;
     transform: scale(0.9);
     transition: transform 0.3s ease;
@@ -781,16 +789,17 @@ footer {
 
 .aviso-construcao {
   display: none; /* comeca escondido */
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: var(--cor-primaria);
   color: var(--cor-texto-invertido);
   text-align: center;
-  padding: 10px 40px 10px 20px;
+  padding: 10px 52px 10px 20px;
   font-size: 0.8em;
   line-height: 1.4;
-  z-index: 2000; /* garante que fique sobre tudo */
+  z-index: 1100; /* acima do header fixo */
   border-bottom: 3px solid var(--cor-fundo-header);
 }
 
@@ -807,13 +816,15 @@ footer {
 .fechar-aviso {
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 10px;
   transform: translateY(-50%);
   background: transparent;
   border: 2px solid var(--cor-texto-invertido);
   color: var(--cor-texto-invertido);
   cursor: pointer;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+  line-height: 1;
 }
