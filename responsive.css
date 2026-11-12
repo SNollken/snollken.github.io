@@ -50,8 +50,24 @@
         min-height: auto;
     }
 
+    body.aviso-visivel #inicio {
+        padding-top: calc(120px + var(--aviso-h, 0px));
+    }
+
+    #menu-hamburguer {
+        padding: 4px 6px;
+    }
+
+    #menu-hamburguer .menu-icon {
+        margin-bottom: 16px;
+    }
+
     section {
         scroll-margin-top: 140px;
+    }
+
+    body.aviso-visivel section {
+        scroll-margin-top: calc(140px + var(--aviso-h, 0px));
     }
 
     .container-inicio {
