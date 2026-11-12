@@ -37,18 +37,11 @@ Este projeto foi construído com a base do desenvolvimento front-end, sem o uso 
 
 ## 📈 Status do Projeto
 
-**Status:** Em Desenvolvimento 👷‍♀️
+**Status:** Atualizado conforme novos projetos e estudos
 
-Este projeto está em constante evolução, assim como minhas habilidades!
-
-### Próximos Passos:
-
-* [ ] Implementar pop-ups (modais) para os "Detalhes do Projeto".
+### Próximos passos
 
 * [ ] Adicionar mais projetos à galeria.
-
-* [ ] Refinar as animações e transições com CSS e JavaScript.
-
 * [ ] Otimizar o site para uma melhor performance.
 
 ## ☎️ Contato
