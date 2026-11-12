@@ -330,8 +330,8 @@ footer {
     background-color: var(--cor-fundo-secundario);
     border: 3px solid var(--cor-primaria);
     box-shadow: 4px 4px 0px var(--cor-primaria-sombra);
-    width: 250px; /* largura aumentada para caber o conteudo */
-    min-height: 130px; /* altura minima */
+    width: 260px; /* largura aumentada para caber o conteudo */
+    min-height: 140px; /* altura minima */
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -380,7 +380,7 @@ footer {
 
 .skill-item:hover .skill-details {
     opacity: 1; /* mostra no hover */
-    max-height: 200px; /* altura maxima para o conteudo aparecer */
+    max-height: 420px; /* altura maxima para o conteudo aparecer */
     padding-top: 20px; /* espaco entre o header e os detalhes */
 }
 
@@ -392,9 +392,10 @@ footer {
 }
 
 .skill-details li {
-    font-size: 0.7em;
+    font-size: 0.65em;
     color: var(--cor-texto-secundario);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
 .skill-project-link {
